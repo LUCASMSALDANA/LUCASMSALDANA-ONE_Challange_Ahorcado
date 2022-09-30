@@ -90,7 +90,11 @@ function seccionagregarpalabra(){
 
 function agregarPalabra(){
     if(!inputAgregarPalabra.value.trim() == ""){
-        palabras.push(inputAgregarPalabra.value.trim().toLowerCase());
+        if(!palabras.includes(inputAgregarPalabra.value.trim().toLowerCase())){
+            palabras.push(inputAgregarPalabra.value.trim().toLowerCase());
+        }else{
+            alert("Esa palabra ya se encuentra ingresada")
+        }
     }else{
         alert("Ingrese una palabra")
     }
