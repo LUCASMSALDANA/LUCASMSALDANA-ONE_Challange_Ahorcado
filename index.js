@@ -49,7 +49,8 @@ let intentos=0;
 let palabras =["verdugo","caballero","espada","laud","cruzada"];
 let abecedario="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 let escucharTeclado=false;
-
+let escucharTrucos=true;
+let trucos="";
 
 function nuevoJuego(){
     trasladaSecciones.style.transform = "translateX(-811px)";
@@ -77,15 +78,18 @@ function reinicioVariables(){
     palabraSecretaAlertaJuego.innerHTML="";
     alertaVive.style.display="none";
     alertaMuere.style.display="none";
+    escucharTrucos=false;
 }
 
 function volverAlMenuPrincipal(){
     trasladaSecciones.style.transform = "translateX(-404px)";    
-    escucharTeclado=false;     
+    escucharTeclado=false; 
+    escucharTrucos=true;   
 }
 
 function seccionagregarpalabra(){
     trasladaSecciones.style.transform = "translateX(0px)";
+    escucharTrucos=false;
 }
 
 function agregarPalabra(){
@@ -113,15 +117,16 @@ function crearPalabra(){
 }
 
 function verificarLetra(evento){
-
     if(escucharTeclado){
         teclaPresionada = evento.key.toUpperCase();
         if(abecedario.includes(teclaPresionada) && !letrasUsadas.toString().includes(teclaPresionada)){
            letrasUsadas+=teclaPresionada;
            buscarLetraenPalabra(teclaPresionada);
-        }else{
-            console.log("no entro");
         }
+    }
+    if(escucharTrucos){
+        trucos+=evento.key.toLowerCase();
+        console.log(trucos);
     }
 }
 
