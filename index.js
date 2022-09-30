@@ -136,9 +136,11 @@ function buscarLetraenPalabra(teclaPresionada){
     }
     if(letrasAcertadas==palabraSeleccionada.length){
         finDeJuego("VIVO");
+        escucharTeclado=false;
     }
     if(intentos >= 6){
         finDeJuego("MUERTO");
+        escucharTeclado=false;
     }
 }
 
