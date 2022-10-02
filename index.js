@@ -184,10 +184,10 @@ function finDeJuego(estado){
     pantallacompleta.style.background="rgba(0,0,0,0.5)"
     cartelDeAlerta.style.top="36%";
     if(estado=="VIVO"){
+        viveAudio.play();
         alertaVive.style.display="flex";
         puntos=palabraSeleccionada.length;
         puntosAlertaJuego.innerHTML=puntos;
-        viveAudio.play();
 
     }else{
         alertaMuere.style.display="flex";
