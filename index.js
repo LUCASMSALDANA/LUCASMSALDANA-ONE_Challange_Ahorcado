@@ -24,7 +24,7 @@ const pantallacompleta = document.getElementById("pantallacompleta")
 const trasladaSecciones = document.getElementById("trasladaSecciones")
 const body = document.querySelector('body');
 const divHiddenWord = document.getElementById('hidden-word');
-const puntajemaximo = document.querySelector('.puntajemaximo');
+const puntajemaximo = document.getElementById('puntajemaximo');
 const inputAgregarPalabra = document.getElementById("inputAgregarPalabra");
 const toasty = document.getElementById("toasty");
 const toastyaudio=document.getElementById("toastyaudio");
@@ -48,6 +48,7 @@ let letrasErradas;
 let palabraSeleccionada="";
 let complete = false
 let puntos;
+let puntosmaximos=0;
 let intentos=0;
 let palabras =["verdugo","caballero","espada","laud","cruzada","castillo","herreria","monje"];
 let abecedario="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
@@ -190,6 +191,10 @@ function finDeJuego(estado){
         alertaVive.style.display="flex";
         puntos=palabraSeleccionada.length;
         puntosAlertaJuego.innerHTML=puntos;
+        if(puntos>puntosmaximos){
+            puntosmaximos=puntos;
+            puntajemaximo.innerHTML=puntosmaximos;
+        }
 
     }else{
         muereAudio.play();
