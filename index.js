@@ -24,7 +24,7 @@ const pantallacompleta = document.getElementById("pantallacompleta")
 const trasladaSecciones = document.getElementById("trasladaSecciones")
 const body = document.querySelector('body');
 const divHiddenWord = document.getElementById('hidden-word');
-const puntajemaximo = document.getElementById('puntajemaximo');
+const spanPuntajemaximo = document.getElementById('puntajemaximo');
 const inputAgregarPalabra = document.getElementById("inputAgregarPalabra");
 const toasty = document.getElementById("toasty");
 const toastyaudio=document.getElementById("toastyaudio");
@@ -193,7 +193,7 @@ function finDeJuego(estado){
         puntosAlertaJuego.innerHTML=puntos;
         if(puntos>puntosmaximos){
             puntosmaximos=puntos;
-            puntajemaximo.innerHTML=puntosmaximos;
+            spanPuntajemaximo.innerHTML=puntosmaximos;
         }
 
     }else{
