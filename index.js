@@ -14,6 +14,7 @@ const btnNewGame = document.getElementById("btn-nuevojuego");
 const btnDesistir = document.getElementById("btn-desistir");
 
 /*ALERTAS*/
+const cartelDeAlerta = document.getElementById("alertas")
 const alertaVive = document.getElementById('alerta-vive');
 const alertaMuere = document.getElementById('alerta-muere');
 const palabraSecretaAlertaJuego = document.getElementById('palabraSecretaAlertaJuego');
@@ -24,7 +25,7 @@ const trasladaSecciones = document.getElementById("trasladaSecciones")
 const body = document.querySelector('body');
 const divHiddenWord = document.getElementById('hidden-word');
 const score = document.querySelector('.accumulated-points');
-const maxedScore = document.querySelector('.puntajemaximo');
+const puntajemaximo = document.querySelector('.puntajemaximo');
 const inputAgregarPalabra = document.getElementById("inputAgregarPalabra")
 
 /*Le agregamos funcionalidades a los botones*/
@@ -61,8 +62,6 @@ function nuevoJuego(){
     // alertWin.style.display = 'none';
     // alertFail.style.display = 'none';
     // keyboardUnlock();
-    // score.innerHTML = points;
-    // maxedScore.innerHTML = maxedPoints;
 }
 
 function reinicioVariables(){
@@ -80,6 +79,7 @@ function reinicioVariables(){
     alertaVive.style.display="none";
     alertaMuere.style.display="none";
     escucharTrucos=false;
+    cartelDeAlerta.style.top="-36%";
 }
 
 function volverAlMenuPrincipal(){
@@ -165,6 +165,7 @@ function quitarGuiones(){
 
 function finDeJuego(estado){
     pantallacompleta.style.background="rgba(0,0,0,0.5)"
+    cartelDeAlerta.style.top="36%";
     if(estado=="VIVO"){
         alertaVive.style.display="flex";
         puntos=palabraSeleccionada.length;
