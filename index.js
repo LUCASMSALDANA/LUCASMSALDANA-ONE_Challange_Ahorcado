@@ -19,7 +19,7 @@ const alertaMuere = document.getElementById('alerta-muere');
 const palabraSecretaAlertaJuego = document.getElementById('palabraSecretaAlertaJuego');
 const puntosAlertaJuego = document.getElementById('puntosAlertaJuego');
 
-const pantallaprincipal = document.getElementById("pantallacompleta")
+const pantallacompleta = document.getElementById("pantallacompleta")
 const trasladaSecciones = document.getElementById("trasladaSecciones")
 const body = document.querySelector('body');
 const divHiddenWord = document.getElementById('hidden-word');
@@ -66,6 +66,7 @@ function nuevoJuego(){
 }
 
 function reinicioVariables(){
+    pantallacompleta.style.background="none";
     letrasUsadas = "";
     letrasAcertadas=0
     letrasErradas=0
@@ -82,6 +83,7 @@ function reinicioVariables(){
 }
 
 function volverAlMenuPrincipal(){
+    pantallacompleta.style.background="none";
     trasladaSecciones.style.transform = "translateX(-404px)";    
     escucharTeclado=false; 
     escucharTrucos=true;   
@@ -162,6 +164,7 @@ function quitarGuiones(){
 }
 
 function finDeJuego(estado){
+    pantallacompleta.style.background="rgba(0,0,0,0.5)"
     if(estado=="VIVO"){
         alertaVive.style.display="flex";
         puntos=palabraSeleccionada.length;
