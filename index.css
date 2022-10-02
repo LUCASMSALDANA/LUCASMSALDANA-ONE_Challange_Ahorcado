@@ -418,3 +418,9 @@ footer p{
 .git-img{
     height: 36px;
 }
+
+@media (max-width:720px) {
+    header{
+        flex-direction: column;
+    }
+}
