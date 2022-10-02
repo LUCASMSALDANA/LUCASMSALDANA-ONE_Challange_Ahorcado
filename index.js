@@ -24,10 +24,9 @@ const pantallacompleta = document.getElementById("pantallacompleta")
 const trasladaSecciones = document.getElementById("trasladaSecciones")
 const body = document.querySelector('body');
 const divHiddenWord = document.getElementById('hidden-word');
-const score = document.querySelector('.accumulated-points');
 const puntajemaximo = document.querySelector('.puntajemaximo');
 const inputAgregarPalabra = document.getElementById("inputAgregarPalabra")
-
+const toasty = document.getElementById("toasty")
 /*Le agregamos funcionalidades a los botones*/
 btnStartGame.onclick= nuevoJuego;
 btnDesistir.onclick = volverAlMenuPrincipal;
@@ -80,6 +79,7 @@ function reinicioVariables(){
     alertaMuere.style.display="none";
     escucharTrucos=false;
     cartelDeAlerta.style.top="-36%";
+    toasty.style.animation="";
 }
 
 function volverAlMenuPrincipal(){
@@ -128,6 +128,7 @@ function verificarLetra(evento){
     }
     if(escucharTrucos){
         trucos+=evento.key.toLowerCase();
+        verificarTrucos(trucos);
         console.log(trucos);
     }
 }
@@ -152,6 +153,13 @@ function buscarLetraenPalabra(teclaPresionada){
     if(intentos >= 6){
         finDeJuego("MUERTO");
         escucharTeclado=false;
+    }
+}
+
+function verificarTrucos(){
+    if(trucos.includes("toasty")){
+        toasty.style.animation="toasty 2000ms";
+        trucos="";
     }
 }
 

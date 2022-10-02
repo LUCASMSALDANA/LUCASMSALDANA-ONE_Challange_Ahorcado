@@ -379,7 +379,30 @@ input:focus{
     color: #363f45;
 }
 
+/*Pantalla completa*/
 
+#toasty{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    right: -150px;
+    bottom: 0;
+    animation: toasty 2500ms paused; 
+}
+@keyframes toasty {
+    0%{
+        right: -150px;
+    }
+    45%{
+        right: 0%;
+    }
+    55%{
+        right: 0%;
+    }
+    100%{
+        right: -150px;
+    }
+}
 
 /*********/
 /*Footer*/
