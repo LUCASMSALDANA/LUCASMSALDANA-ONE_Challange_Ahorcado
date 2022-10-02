@@ -29,6 +29,7 @@ const inputAgregarPalabra = document.getElementById("inputAgregarPalabra");
 const toasty = document.getElementById("toasty");
 const toastyaudio=document.getElementById("toastyaudio");
 const viveAudio = document.getElementById("viveAudio");
+const muereAudio = document.getElementById("muereAudio");
 /*Le agregamos funcionalidades a los botones*/
 btnStartGame.onclick= nuevoJuego;
 btnDesistir.onclick = volverAlMenuPrincipal;
@@ -48,7 +49,7 @@ let palabraSeleccionada="";
 let complete = false
 let puntos;
 let intentos=0;
-let palabras =["verdugo","caballero","espada","laud","cruzada"];
+let palabras =["verdugo","caballero","espada","laud","cruzada","castillo","herreria","monje"];
 let abecedario="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 let escucharTeclado=false;
 let escucharTrucos=true;
@@ -191,6 +192,7 @@ function finDeJuego(estado){
         puntosAlertaJuego.innerHTML=puntos;
 
     }else{
+        muereAudio.play();
         alertaMuere.style.display="flex";
         palabraSecretaAlertaJuego.innerHTML=palabraSeleccionada;
     }
