@@ -25,8 +25,10 @@ const trasladaSecciones = document.getElementById("trasladaSecciones")
 const body = document.querySelector('body');
 const divHiddenWord = document.getElementById('hidden-word');
 const puntajemaximo = document.querySelector('.puntajemaximo');
-const inputAgregarPalabra = document.getElementById("inputAgregarPalabra")
-const toasty = document.getElementById("toasty")
+const inputAgregarPalabra = document.getElementById("inputAgregarPalabra");
+const toasty = document.getElementById("toasty");
+const toastyaudio=document.getElementById("toastyaudio");
+const viveAudio = document.getElementById("viveAudio");
 /*Le agregamos funcionalidades a los botones*/
 btnStartGame.onclick= nuevoJuego;
 btnDesistir.onclick = volverAlMenuPrincipal;
@@ -51,6 +53,7 @@ let abecedario="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 let escucharTeclado=false;
 let escucharTrucos=true;
 let trucos="";
+let toastyrun=false;
 
 function nuevoJuego(){
     trasladaSecciones.style.transform = "translateX(-811px)";
@@ -158,7 +161,13 @@ function buscarLetraenPalabra(teclaPresionada){
 
 function verificarTrucos(){
     if(trucos.includes("toasty")){
-        toasty.style.animation="toasty 2000ms";
+        if(toastyrun==false){
+            toasty.style.right="0";
+            toastyaudio.play();
+            toastyrun=true;
+            setTimeout(function(){toastyrun=false},2000);
+            setTimeout(function(){toasty.style.right="-150px"; toastyrun=false},490);
+        }
         trucos="";
     }
 }
@@ -178,6 +187,8 @@ function finDeJuego(estado){
         alertaVive.style.display="flex";
         puntos=palabraSeleccionada.length;
         puntosAlertaJuego.innerHTML=puntos;
+        viveAudio.play();
+
     }else{
         alertaMuere.style.display="flex";
         palabraSecretaAlertaJuego.innerHTML=palabraSeleccionada;
