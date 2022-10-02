@@ -385,7 +385,6 @@ input:focus{
     height: 150px;
     width: 150px;
     position: absolute;
-    right: -150px;
     bottom: 0;
     transition: 500ms;
 }

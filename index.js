@@ -53,7 +53,9 @@ let abecedario="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 let escucharTeclado=false;
 let escucharTrucos=true;
 let trucos="";
-let toastyrun=false;
+let toastyrun=false
+toasty.style.right="-150px";
+
 
 function nuevoJuego(){
     trasladaSecciones.style.transform = "translateX(-811px)";
@@ -82,7 +84,6 @@ function reinicioVariables(){
     alertaMuere.style.display="none";
     escucharTrucos=false;
     cartelDeAlerta.style.top="-36%";
-    toasty.style.animation="";
 }
 
 function volverAlMenuPrincipal(){
@@ -161,13 +162,13 @@ function buscarLetraenPalabra(teclaPresionada){
 
 function verificarTrucos(){
     if(trucos.includes("toasty")){
-        if(toastyrun==false){
-            toasty.style.right="0";
-            toastyaudio.play();
+         if(toasty.style.right=="-150px" && !toastyrun){
             toastyrun=true;
-            setTimeout(function(){toastyrun=false},2000);
-            setTimeout(function(){toasty.style.right="-150px"; toastyrun=false},490);
-        }
+             toasty.style.right="0";
+             toastyaudio.play();
+             setTimeout(function(){toasty.style.right="-150px"; },490);
+             setTimeout(function(){toastyrun=false; },1000);
+         }
         trucos="";
     }
 }
