@@ -154,6 +154,7 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 #agregarpalabras h1{
@@ -164,7 +165,7 @@ section{
     width: 390px;
     height: 70px;
     background-image: url(img/tablero.png);
-    background-size: 390px 70px;
+    background-size: 100% 100%;
     padding: 0px 15px;
     display: flex;
 }
@@ -190,6 +191,7 @@ input:focus{
     border: none;
     outline: none
 }
+
 /*Botones*/
 #botonesAgregarPalabra{
     position: absolute;
@@ -201,6 +203,21 @@ input:focus{
     height: 55px;
 }
 
+/*Carteles*/
+#alertaagregarpalabras{
+    width: 400px;
+    background-image: url("img/tablero.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: -14%;
+    left: 0;
+    transition: 350ms;
+}
+
+#campovacio, #palabraagregada, #palabrarepetida{
+    display: none;
+}
 
 /****************/
 /*Menu Principal*/
@@ -217,15 +234,17 @@ input:focus{
     top: 8%;
     left: 73%;
     z-index:-1;
-    /* animation: moverSoga 1s infinite alternate; */
+    animation: moverSoga 1s infinite alternate;  
 }
 
 @keyframes moverSoga {
     0%{
         transform: skewY(-8deg);
+        /* transform:rotateY(0deg); */
     }
     100%{
         transform:skewY(8deg);
+        /* transform:rotateX(10deg); */
     }
 }
 
@@ -305,8 +324,10 @@ input:focus{
     z-index: 1;
     margin: auto;
     font-size: 2em;
-    padding: 4px 0;
-    
+    display: flex;
+    padding-bottom: 2px;
+    align-items: flex-end;
+    justify-content: center;
 }
 .cartelalerta{
     display: flex;
@@ -422,5 +443,14 @@ footer p{
 @media (max-width:720px) {
     header{
         flex-direction: column;
+    }
+    header h1{
+        font-size: 15vw;
+    }
+}
+
+@media (max-width:380px) {
+    header{
+        background-size: 100% 100%;
     }
 }

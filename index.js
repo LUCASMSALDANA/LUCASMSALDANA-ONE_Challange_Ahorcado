@@ -30,6 +30,12 @@ const toasty = document.getElementById("toasty");
 const toastyaudio=document.getElementById("toastyaudio");
 const viveAudio = document.getElementById("viveAudio");
 const muereAudio = document.getElementById("muereAudio");
+
+const cartelAgregarPalabras = document.getElementById("alertaagregarpalabras");
+const SpanCampoVacio = document.getElementById("campovacio");
+const SpanPalabraAgragada = document.getElementById("palabraagregada");
+const SpanPalabraRepetida = document.getElementById("palabrarepetida")
+
 /*Le agregamos funcionalidades a los botones*/
 btnStartGame.onclick= nuevoJuego;
 btnDesistir.onclick = volverAlMenuPrincipal;
@@ -104,11 +110,28 @@ function agregarPalabra(){
     if(!inputAgregarPalabra.value.trim() == ""){
         if(!palabras.includes(inputAgregarPalabra.value.trim().toLowerCase())){
             palabras.push(inputAgregarPalabra.value.trim().toLowerCase());
+            inputAgregarPalabra.value="";
+            btnAgregarPlabra.disabled="true";
+            SpanPalabraAgragada.style.display="inline";
+            cartelAgregarPalabras.style.top="20%";
+            pantallacompleta.style.background="rgba(0,0,0,0.5)"
+            setTimeout(function(){cartelAgregarPalabras.style.top="-14%";
+                pantallacompleta.style.background="none";    
+                btnAgregarPlabra.disabled="none";
+                console.log("porque no funciona");
+            },800);
         }else{
-            alert("Esa palabra ya se encuentra ingresada")
+            SpanPalabraRepetida.style.display="inline";
+            cartelAgregarPalabras.style.top="20%";
         }
     }else{
-        alert("Ingrese una palabra")
+        btnAgregarPlabra.setAttribute("disabled","true");
+        SpanCampoVacio.style.display="inline";
+        cartelAgregarPalabras.style.top="20%";
+        setTimeout(function(){ cartelAgregarPalabras.style.top="-14%";
+            btnAgregarPlabra.disabled="false";
+            console.log("porque no funciona ");
+        },800);
     }
 }
 function crearPalabra(){
