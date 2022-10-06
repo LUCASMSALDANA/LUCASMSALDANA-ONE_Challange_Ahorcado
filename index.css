@@ -234,7 +234,7 @@ input:focus{
     top: 8%;
     left: 73%;
     z-index:-1;
-    animation: moverSoga 1s infinite alternate;  
+    animation: moverSoga 1500ms infinite alternate;  
 }
 
 @keyframes moverSoga {
