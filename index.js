@@ -1,10 +1,8 @@
 /**  Detectar si es o no un celular**/
 var isAndroid = navigator.userAgent.match(/Android/i) !== null; 
 var isiOS = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)/i) !== null;
-
 var isMobile = (isiOS || isAndroid);
-console.log(isMobile);
-if(isMobile){alert("hola dispositivo");}else{alert("es dektop");}
+
 
 /*Nos traemos los distintos elemento como variables*/
 /***************************************************/
@@ -39,6 +37,7 @@ const toasty = document.getElementById("toasty");
 const toastyaudio=document.getElementById("toastyaudio");
 const viveAudio = document.getElementById("viveAudio");
 const muereAudio = document.getElementById("muereAudio");
+const divTeclado = document.getElementById("teclado");
 
 const cartelAgregarPalabras = document.getElementById("alertaagregarpalabras");
 const SpanCampoVacio = document.getElementById("campovacio");
@@ -73,6 +72,9 @@ let trucos="";
 let toastyrun=false
 let godmode = false;
 toasty.style.right="-150px";
+if(isMobile){
+    divTeclado.style.display="block";
+}
 
 
 function nuevoJuego(){
