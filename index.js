@@ -24,6 +24,7 @@ const pantallacompleta = document.getElementById("pantallacompleta")
 const trasladaSecciones = document.getElementById("trasladaSecciones")
 const body = document.querySelector('body');
 const divHiddenWord = document.getElementById('hidden-word');
+const divWrongLetters = document.getElementById('wrong-letters')
 const spanPuntajemaximo = document.getElementById('puntajemaximo');
 const inputAgregarPalabra = document.getElementById("inputAgregarPalabra");
 const toasty = document.getElementById("toasty");
@@ -88,6 +89,7 @@ function reinicioVariables(){
     if(palabraSeleccionada){quitarGuiones()};
     puntosAlertaJuego.innerHTML=0;
     palabraSecretaAlertaJuego.innerHTML="";
+    divWrongLetters.innerHTML="";
     alertaVive.style.display="none";
     alertaMuere.style.display="none";
     escucharTrucos=false;
@@ -174,6 +176,7 @@ function buscarLetraenPalabra(teclaPresionada){
         }
     }else{
         intentos+=1
+        divWrongLetters.innerHTML+=teclaPresionada+" ";
     }
     if(letrasAcertadas==palabraSeleccionada.length){
         finDeJuego("VIVO");

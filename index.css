@@ -170,6 +170,7 @@ section{
     padding: 0px 15px;
     display: flex;
 }
+
 #agregarpalabras h3{
     font-weight: 500;
     font-size: 1.4em;
@@ -304,12 +305,26 @@ input:focus{
     font-weight: 500;
 }
 
+#wrong-letters{
+    width: 90%;
+    height: 70px;
+    background-image: url(img/tablero.png);
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 25px;
+    color: red;
+    font-weight: bold;
+    font-size: 32px;
+}
+
 /*Alertas*/
 
 #alertas{
     background-image: url("img/alertacuerpo.png");
     background-repeat: no-repeat;
-    margin: auto;
+    margin: auto 11px;
     width: 400px;
     position: absolute;
     top: -36%;
@@ -441,6 +456,7 @@ footer p{
     height: 36px;
 }
 
+
 @media (max-width:768px) {
     header{
         flex-direction: column;
@@ -453,6 +469,7 @@ footer p{
         min-width: 360px;
     }
 
+}
 
 @media (max-width:380px) {
     header{
@@ -460,5 +477,10 @@ footer p{
     }
     .tablero{
         width: 85%;
+    }
+    #alertas {
+        margin: auto;
+        width: 100%;
+
     }
 }
