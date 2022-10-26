@@ -63,6 +63,7 @@ let escucharTeclado=false;
 let escucharTrucos=true;
 let trucos="";
 let toastyrun=false
+let godmode = false;
 toasty.style.right="-150px";
 
 
@@ -97,8 +98,11 @@ function reinicioVariables(){
 }
 
 function volverAlMenuPrincipal(){
+    if(trasladaSecciones.style.transform=="translateX(-811px)"){
+        godmode=false;               
+    }
     pantallacompleta.style.background="none";
-    trasladaSecciones.style.transform = "translateX(-404px)";    
+    trasladaSecciones.style.transform = "translateX(-404px)";     
     escucharTeclado=false; 
     escucharTrucos=true;   
 }
@@ -175,7 +179,9 @@ function buscarLetraenPalabra(teclaPresionada){
             }
         }
     }else{
-        intentos+=1
+        if(!godmode){
+            intentos+=1
+        }
         divWrongLetters.innerHTML+=teclaPresionada+" ";
     }
     if(letrasAcertadas==palabraSeleccionada.length){
@@ -199,6 +205,11 @@ function verificarTrucos(){
          }
         trucos="";
     }
+    if(trucos.includes("mynameismirtha")){
+        godmode = true;
+       trucos="";
+   }
+    
 }
 
 function quitarGuiones(){
