@@ -1,3 +1,11 @@
+/**  Detectar si es o no un celular**/
+var isAndroid = navigator.userAgent.match(/Android/i) !== null; 
+var isiOS = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)/i) !== null;
+
+var isMobile = (isiOS || isAndroid);
+console.log(isMobile);
+if(isMobile){alert("hola dispositivo")}
+
 /*Nos traemos los distintos elemento como variables*/
 /***************************************************/
 /*BOTONES de los Menus*/
