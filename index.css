@@ -390,9 +390,9 @@ input:focus{
     margin: auto;
     margin-bottom: 10px;
     text-align: center;
-    background-color: burlywood;
     display: none;
 }
+
 
 #teclado button{
     border: none;
@@ -404,7 +404,7 @@ input:focus{
     transition: 0.3s;
     color: #363f45;
     border: 1px solid #363f45;
-    background: transparent;
+    background-image: url("img/wood.jpg");
 }
 
 #teclado button:hover{
