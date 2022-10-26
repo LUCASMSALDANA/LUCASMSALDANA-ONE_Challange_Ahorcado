@@ -4,7 +4,7 @@ var isiOS = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)/i) !== null;
 
 var isMobile = (isiOS || isAndroid);
 console.log(isMobile);
-if(isMobile){alert("hola dispositivo")}
+if(isMobile){alert("hola dispositivo");}else{alert("es dektop");}
 
 /*Nos traemos los distintos elemento como variables*/
 /***************************************************/
