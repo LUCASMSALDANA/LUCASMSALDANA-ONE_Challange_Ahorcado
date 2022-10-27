@@ -220,9 +220,9 @@ function verificarTrucos(){
     if(trucos.includes("mynameismirtha")){
         godmode = true;
        trucos="";
-
+       cheatOnAudio.play();
    }
-    if(trucos=""){cheatOnAudio.play();}
+    
 }
 
 function quitarGuiones(){
