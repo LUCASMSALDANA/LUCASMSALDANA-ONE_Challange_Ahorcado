@@ -142,7 +142,7 @@ function presionarN(){
 }
 
 function presionarÑ(){
-    teclaN.disabled= true;
+    teclaÑ.disabled= true;
     letrasUsadas+="Ñ";
     buscarLetraenPalabra("Ñ");
 }
@@ -217,4 +217,35 @@ function presionarZ(){
     teclaZ.disabled= true;
     letrasUsadas+="Z";
     buscarLetraenPalabra("Z");
+}
+
+/* Reiniciar teclado mobile*/
+function reiniciarTecladoMobile(){
+    teclaA.disabled= false;
+    teclaB.disabled= false;
+    teclaC.disabled= false;
+    teclaD.disabled= false;
+    teclaE.disabled= false;
+    teclaF.disabled= false;
+    teclaG.disabled= false;
+    teclaH.disabled= false;
+    teclaI.disabled= false;
+    teclaJ.disabled= false;
+    teclaK.disabled= false;
+    teclaL.disabled= false;
+    teclaM.disabled= false;
+    teclaN.disabled= false;
+    teclaÑ.disabled= false;
+    teclaO.disabled= false;
+    teclaP.disabled= false;
+    teclaQ.disabled= false;
+    teclaR.disabled= false;
+    teclaS.disabled= false;
+    teclaT.disabled= false;
+    teclaU.disabled= false;
+    teclaV.disabled= false;
+    teclaW.disabled= false;
+    teclaX.disabled= false;
+    teclaY.disabled= false;
+    teclaZ.disabled= false;
 }

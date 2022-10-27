@@ -39,7 +39,6 @@ const viveAudio = document.getElementById("viveAudio");
 const muereAudio = document.getElementById("muereAudio");
 const cheatOnAudio = document.getElementById("crowAudio")
 const divTeclado = document.getElementById("teclado");
-const letrasTeclado = document.querySelector("letras-teclado");
 
 
 const cartelAgregarPalabras = document.getElementById("alertaagregarpalabras");
@@ -83,7 +82,6 @@ if(isMobile){
 function nuevoJuego(){
     trasladaSecciones.style.transform = "translateX(-811px)";
     reinicioVariables();
- 
     crearPalabra();
     // hangedCharacter(0);
     // alertWin.style.display = 'none';
@@ -108,6 +106,7 @@ function reinicioVariables(){
     alertaMuere.style.display="none";
     escucharTrucos=false;
     cartelDeAlerta.style.top="-36%";
+    if(isMobile){reiniciarTecladoMobile()}
 }
 
 function volverAlMenuPrincipal(){
