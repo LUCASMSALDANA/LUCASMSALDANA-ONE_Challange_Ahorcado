@@ -402,7 +402,7 @@ input:focus{
     margin: 4px 2px;
     border-radius: 5px;
     transition: 0.3s;
-    color: #363f45;
+    color: black;
     border: 1px solid #363f45;
     background-image: url("img/wood.jpg");
 }
