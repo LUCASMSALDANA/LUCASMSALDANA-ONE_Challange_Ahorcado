@@ -37,6 +37,7 @@ const toasty = document.getElementById("toasty");
 const toastyaudio=document.getElementById("toastyaudio");
 const viveAudio = document.getElementById("viveAudio");
 const muereAudio = document.getElementById("muereAudio");
+const cheatOnAudio = document.getElementById("crowAudio")
 const divTeclado = document.getElementById("teclado");
 
 const cartelAgregarPalabras = document.getElementById("alertaagregarpalabras");
@@ -218,6 +219,7 @@ function verificarTrucos(){
     if(trucos.includes("mynameismirtha")){
         godmode = true;
        trucos="";
+       cheatOnAudio.play();
    }
     
 }
