@@ -39,6 +39,8 @@ const viveAudio = document.getElementById("viveAudio");
 const muereAudio = document.getElementById("muereAudio");
 const cheatOnAudio = document.getElementById("crowAudio")
 const divTeclado = document.getElementById("teclado");
+const letrasTeclado = document.querySelector("letras-teclado");
+
 
 const cartelAgregarPalabras = document.getElementById("alertaagregarpalabras");
 const SpanCampoVacio = document.getElementById("campovacio");
