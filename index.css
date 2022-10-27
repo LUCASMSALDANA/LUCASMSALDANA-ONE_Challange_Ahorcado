@@ -413,8 +413,8 @@ input:focus{
 }
 
 #teclado button:disabled{
-    background: transparent;
-    color: #363f45;
+    background: rgba(119, 68, 9, 0.7);
+    color: black;
 }
 
 /*Pantalla completa*/
